@@ -1,0 +1,65 @@
+/* Generici */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+/* Header */
+
+header {
+  height: 100px;
+  padding: 0 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  padding: .25rem 2rem;
+  font-weight: bold;
+}
+
+/* Main */
+
+main {
+  background-color: aquamarine;
+  height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: calc(100% / 10);
+  aspect-ratio: 1 / 1;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clicked {
+  background-color: cadetblue;
+}
+
+/* Footer */
+
+footer {
+  height: 60px;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+}
