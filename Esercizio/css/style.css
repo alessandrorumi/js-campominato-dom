@@ -51,8 +51,12 @@ main {
   align-items: center;
 }
 
-.clicked {
-  background-color: cadetblue;
+.save {
+  background-color: dodgerblue;
+}
+
+.dead {
+  background-color: crimson;
 }
 
 /* Footer */

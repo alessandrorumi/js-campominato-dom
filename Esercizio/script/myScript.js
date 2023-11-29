@@ -16,7 +16,11 @@ playButton.addEventListener('click', function() {
    mainContainer.innerHTML = '';
 
   // Creazione 100 divs
-  let itemsGenerated = 100;
+  let itemsGenerated = 100; 
+  
+  // Numero di Bombe
+  let bombs = generateArrayRandom(1, 100, 16);
+  console.log(bombs);
 
   for (let i = 1; i <= itemsGenerated; i++) {
 
@@ -32,10 +36,16 @@ playButton.addEventListener('click', function() {
     // Al click del div .square
     myNewElement.addEventListener('click', function() {
     
-      myNewElement.classList.add('clicked');
+      // Se "le bombe" hanno valore = al numero della variabile i
+      if (bombs.includes(i)) {
+        // Bomba
+        myNewElement.classList.add('dead');
 
-      console.log([i]);
-    
+      } else {
+        // Sei salvo
+        myNewElement.classList.add('save');
+      }
+
     });
     
   }
