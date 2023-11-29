@@ -50,6 +50,9 @@ playButton.addEventListener('click', function() {
   } else if (outputUserChoice === 'hard') {
     itemsGenerated = 49;
 
+  } else if (outputUserChoice === 'personalizzata') {
+    itemsGenerated = parseInt(prompt('Quante caselle vuoi?'));
+    numberOfBombs = parseInt(prompt('Quante bombe vuoi?'));
   }
 
   // N° random in base alle bombe
@@ -111,8 +114,6 @@ playButton.addEventListener('click', function() {
 
           alert('Congratulazioni! Gioca subito al SuperEnalotto');
 
-          // Reset della griglia
-          mainContainer.innerHTML = '';
         }
 
       }
