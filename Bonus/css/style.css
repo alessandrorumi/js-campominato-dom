@@ -36,14 +36,14 @@ main {
 }
 
 .container {
-  width: 500px;
-  margin: 0 auto;
+  width: 30%;
+  height: calc(100% - 4rem);
+  margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
 }
 
 .square {
-  aspect-ratio: 1 / 1;
   border: 1px solid black;
   display: flex;
   justify-content: center;

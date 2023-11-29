@@ -52,3 +52,27 @@ function createMyElement(htmlElement, className) {
 
   return newElement;
 };
+
+// Funzione Generazione numeri in array (in modo casuale)
+function generateArrayRandom(min, max, arrayLength) {
+
+  // Array vuoto
+  arrayRandom = [];
+
+  // Finchè gli elementi nell'array sono uguali al n° di elementi
+  while (arrayRandom.length < arrayLength) {
+    
+    // Genera n° random
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    // Se il numero random non è presente nell'array
+    if (!arrayRandom.includes(randomNumber)) {
+
+      // Push nell'array
+      arrayRandom.push(randomNumber);
+    }
+  }
+
+  // Restituisci l'array
+  return arrayRandom;
+}
