@@ -22,6 +22,8 @@ playButton.addEventListener('click', function() {
   let bombs = generateArrayRandom(1, 100, 16);
   console.log(bombs);
 
+  let score = 0;
+
   for (let i = 1; i <= itemsGenerated; i++) {
 
     // Creazione elemento (tramite funzione)
@@ -35,17 +37,18 @@ playButton.addEventListener('click', function() {
 
     // Al click del div .square
     myNewElement.addEventListener('click', function() {
-    
+
       // Se "le bombe" hanno valore = al numero della variabile i
       if (bombs.includes(i)) {
         // Bomba
         myNewElement.classList.add('dead');
-
+        alert(`Hai perso, il tuo punteggio è ${score}`);
+        score = 0; // Reimposta il punteggio quando si perde
       } else {
         // Sei salvo
         myNewElement.classList.add('save');
+        score++;
       }
-
     });
     
   }
