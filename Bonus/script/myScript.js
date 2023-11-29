@@ -22,7 +22,7 @@ const userChoice = document.getElementById('choice');
   let score = 0;
 
   // Numero Bombe
-  let numberOfBombs = 1;
+  let numberOfBombs = 16;
 
   // Dichiaro la variabile 'Sto ancora giocando'
   let didNotLose = true;
@@ -77,8 +77,8 @@ playButton.addEventListener('click', function() {
     // Al click del div .square
     myNewElement.addEventListener('click', function() {
 
-      // Se non ho ancora perso
-      if (didNotLose) {
+      // Se non ho ancora perso e l'elemento non è ancora stato cliccato
+      if (didNotLose && !myNewElement.classList.contains('clicked')) {
 
         // Se c'è corrispondenza tra uno dei numeri generati randomicamente (bombe) e uno dei numeri della griglia
         if (bombs.includes(i)) {
@@ -95,11 +95,18 @@ playButton.addEventListener('click', function() {
         } else {
           // Sei salvo
           myNewElement.classList.add('save');
+
+          // Incrementa di 1 il punteggio
           score++;
+
+          // Aggiungo la classe clicked (altrimenti continuando a fare click aumenta il punteggio)
+          myNewElement.classList.add('clicked');
         }
 
         if (score === itemsGenerated - numberOfBombs) {
+
           alert('Congratulazioni! Gioca subito al SuperEnalotto');
+          mainContainer.innerHTML = '';
         }
 
       }
