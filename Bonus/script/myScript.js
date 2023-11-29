@@ -21,9 +21,6 @@ const userChoice = document.getElementById('choice');
   // Reset punteggio
   let score = 0;
 
-  // Numero Bombe
-  let numberOfBombs = 16;
-
   // Dichiaro la variabile 'Sto ancora giocando'
   let didNotLose = true;
 
@@ -31,6 +28,9 @@ const userChoice = document.getElementById('choice');
 playButton.addEventListener('click', function() {
 
   play.classList.add('hidden');
+
+  // Reset numero di bombe quando inizia una nuova partita
+  numberOfBombs = 16;
 
   // Creazione griglia vuota
   mainContainer.innerHTML = '';
@@ -154,7 +154,7 @@ function generateArrayRandom(min, max, arrayLength) {
   // Array vuoto
   arrayRandom = [];
 
-  // Finchè gli elementi nell'array sono uguali al n° di elementi
+  // Finchè gli elementi nell'array non sono uguali al n° di elementi
   while (arrayRandom.length < arrayLength) {
     
     // Genera n° random
