@@ -30,6 +30,8 @@ const userChoice = document.getElementById('choice');
 // Al click del bottone play
 playButton.addEventListener('click', function() {
 
+  play.classList.add('hidden');
+
   // Creazione griglia vuota
   mainContainer.innerHTML = '';
 
@@ -65,7 +67,7 @@ playButton.addEventListener('click', function() {
     // Creazione elemento (tramite funzione)
     const myNewElement = createMyElement('div', 'square');
 
-    // Append contenuto
+    // Append contenuto (numeri)
     // myNewElement.append(i);
 
     // Larghezza di ogni riga in %
@@ -90,22 +92,26 @@ playButton.addEventListener('click', function() {
           // Reimposta il punteggio quando si perde
           score = 0;
   
+          // Blocca le interazioni con gli elementi
           didNotLose = false;
   
         } else {
-          // Sei salvo
+          // Sei salvo (continua il gioco)
           myNewElement.classList.add('save');
 
           // Incrementa di 1 il punteggio
           score++;
 
-          // Aggiungo la classe clicked (altrimenti continuando a fare click aumenta il punteggio)
+          // Aggiungo la classe clicked (altrimenti continuando a fare click sullo stesso elemento aumenta il punteggio)
           myNewElement.classList.add('clicked');
         }
 
+        // Vittoria (Il punteggio è uguale agli elementi generati - il n° delle bombe)
         if (score === itemsGenerated - numberOfBombs) {
 
           alert('Congratulazioni! Gioca subito al SuperEnalotto');
+
+          // Reset della griglia
           mainContainer.innerHTML = '';
         }
 
@@ -124,7 +130,13 @@ stop.addEventListener('click', function() {
   mainContainer.innerHTML = '';
   didNotLose = true;
 
+
+  play.classList.remove('hidden');
+
 })
+
+
+// Funzioni
 
 // Funzione Creazione Elementi in Html
 function createMyElement(htmlElement, className) {
