@@ -29,7 +29,7 @@ button {
 /* Main */
 
 main {
-  background-color: aquamarine;
+  background-color: grey;
   height: calc(100vh - 160px);
   display: flex;
   align-items: center;
@@ -44,14 +44,19 @@ main {
 }
 
 .square {
-  border: 1px solid black;
+  width: calc(100% / 10);
+  border: 1px solid gainsboro;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.clicked {
-  background-color: cadetblue;
+.save {
+  background-color: lightgrey;
+}
+
+.dead {
+  background-color: black;
 }
 
 select {
