@@ -15,18 +15,19 @@ const stop = document.getElementById('reset');
 // Dichiarazione scleta Difficoltà
 const userChoice = document.getElementById('choice');
 
-  // Dichiarazione div
-  let itemsGenerated = 0; 
+// Dichiarazione div
+let itemsGenerated = 0; 
 
-  // Reset punteggio
-  let score = 0;
+// Reset punteggio
+let score = 0;
 
-  // Dichiaro la variabile 'Sto ancora giocando'
-  let didNotLose = true;
+// Dichiaro la variabile 'Sto ancora giocando'
+let didNotLose = true;
 
 // Al click del bottone play
 playButton.addEventListener('click', function() {
 
+  // Nascosto Play dopo inzio partita
   play.classList.add('hidden');
 
   // Reset numero di bombe quando inizia una nuova partita
@@ -50,9 +51,10 @@ playButton.addEventListener('click', function() {
   } else if (outputUserChoice === 'hard') {
     itemsGenerated = 49;
 
+    // Personalizzata
   } else if (outputUserChoice === 'personalizzata') {
-    itemsGenerated = parseInt(prompt('Quante caselle vuoi?'));
-    numberOfBombs = parseInt(prompt('Quante bombe vuoi?'));
+    itemsGenerated = parseInt(prompt('Seleziona il n° di caselle'));
+    numberOfBombs = parseInt(prompt('Seleziona il n° di bombe'));
   }
 
   // N° random in base alle bombe
@@ -87,12 +89,13 @@ playButton.addEventListener('click', function() {
 
         // Se c'è corrispondenza tra uno dei numeri generati randomicamente (bombe) e uno dei numeri della griglia
         if (bombs.includes(i)) {
+          
           // Bomba
           myNewElement.classList.add('dead');
   
           alert(`Hai perso, il tuo punteggio è ${score}`);
   
-          // Reimposta il punteggio quando si perde
+          // Reset del punteggio quando si perde
           score = 0;
   
           // Blocca le interazioni con gli elementi
